@@ -40,6 +40,7 @@ int main() {
     printf("\n");
 
     inorder(patientData);
+    printf("ไอเหี้ยบัง");
 
     return 0;
 }
