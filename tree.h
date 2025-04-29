@@ -42,10 +42,26 @@ struct node* insert(struct node* root, Patient *patient) {
 }
 
 void inorder(struct node* root) {
+
     if (root != NULL) {
         inorder(root->left);
         printf("%s %d\n", root->patient->fullname, root->patient->age);
         inorder(root->right);
+    }
+
+    return;
+}
+
+void SearchTree(struct node* root, char *name, int *h) {
+
+    if (root != NULL) {
+        int c = strcmp(root->patient->fullname, name);
+        if(c == 0){
+            printf("%s %d\n", root->patient->fullname, root->patient->age);
+            *h = 1;
+            return;
+        }else if(c<0) SearchTree(root->right, name, h);
+        else SearchTree(root->left, name, h);
     }
 
     return;
