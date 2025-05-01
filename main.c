@@ -39,7 +39,7 @@ int main() {
     DisplayList(patientQueue.front);
     printf("\n");
 
-    inorder(patientData);
+    inorder(patientData, 1);
 
     return 0;
 }

@@ -41,15 +41,14 @@ struct node* insert(struct node* root, Patient *patient) {
     }
 }
 
-void inorder(struct node* root) {
-
+void inorder(struct node* root, int* n) {
     if (root != NULL) {
-        inorder(root->left);
-        printf("%s %d\n", root->patient->fullname, root->patient->age);
-        inorder(root->right);
-    }
+        inorder(root->left, n);
 
-    return;
+        printf("%-3d %-20s %-5d %-10s\n", (*n)++, root->patient->fullname, root->patient->age, root->patient->sex);
+
+        inorder(root->right, n);
+    }
 }
 
 void SearchTree(struct node* root, char *name, int *h) {

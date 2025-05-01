@@ -4,6 +4,31 @@
 #include "piorqueue.h"
 #include "tree.h"
 
+void clearTerminal() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
+void waitForEnter() {
+    printf("Press Enter to continue: ");
+    
+    while (getchar() != '\n');
+
+    getchar();
+}
+
+void confirm(){
+    char a;
+    // printf("Enter any keys to continue: ");
+    // scanf(" %c", &a);
+    waitForEnter();
+    clearTerminal();
+    return;
+}
+
 void MoveData(Queue *patientQueue, node **patientData) {
     if (patientQueue->front != NULL) {
         Patient *temppatient = patientQueue->front; 
@@ -21,14 +46,8 @@ void DoctorMenu(int *choice){
     printf("Enter choice number: ");
 
     scanf("%d", choice);
+    clearTerminal();
 
-    return;
-}
-
-void confirm(){
-    char a;
-    printf("Enter any keys to continue: ");
-    scanf(" %c", &a);
     return;
 }
 
@@ -43,19 +62,28 @@ void DisplayCurePatient(node *patientData){
 
     if(a == 1) {
         if(patientData == NULL) printf("No Cured Patient\n");
-        else inorder(patientData);
+        else {
+            printf("%-3s %-20s %-5s %-10s\n", "", "NAME", "AGE", "SEX");
+            int n = 1;
+            inorder(patientData, &n);
+        }
     }
     else if(a == 2){
-        char name[40];
-        int h = 0;
-        printf("Enter Search Name: ");
-        scanf(" %[^\n]s", name); 
-        SearchTree(patientData, name, &h);
+        if(patientData == NULL) printf("No Cured Patient\n");
+        else{
+            char name[40];
+            int h = 0;
+            printf("Enter Search Name: ");
+            scanf(" %[^\n]s", name); 
+            SearchTree(patientData, name, &h);
 
-        if(h == 0) printf("%s Not Found.\n", name);
+            if(h == 0) printf("%s Not Found.\n", name);
+        }
     }
     else if(a == 3) return;
     else DisplayCurePatient(patientData);
+
+    confirm();
     return;
 }
 
@@ -94,7 +122,7 @@ int main() {
             break;
         }
 
-        printf("\n");
+        //printf("\n");
         DoctorMenu(&choice);
     }
 

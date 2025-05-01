@@ -69,8 +69,9 @@ void DisplayList(Patient *front) {
     }
 
     Patient *ptr = front;
+    int n = 1;
     while (ptr != NULL) {
-        printf("Fullname: %s, Age: %d, Priority: %d\n", ptr->fullname, ptr->age, ptr->pior);
+        printf("%d. Fullname: %s, Age: %d, Priority: %d\n",n++, ptr->fullname, ptr->age, ptr->pior);
         ptr = ptr->next;
     }
 }
