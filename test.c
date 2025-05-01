@@ -21,9 +21,6 @@ void waitForEnter() {
 }
 
 void confirm(){
-    char a;
-    // printf("Enter any keys to continue: ");
-    // scanf(" %c", &a);
     waitForEnter();
     clearTerminal();
     return;
@@ -59,6 +56,7 @@ void DisplayCurePatient(node *patientData){
     printf("3.Back\n");
     printf("Enter choice number: ");
     scanf("%d", &a);
+    printf("\n");
 
     if(a == 1) {
         if(patientData == NULL) printf("No Cured Patient\n");
@@ -66,6 +64,7 @@ void DisplayCurePatient(node *patientData){
             printf("%-3s %-20s %-5s %-10s\n", "", "NAME", "AGE", "SEX");
             int n = 1;
             inorder(patientData, &n);
+            printf("\n");
         }
     }
     else if(a == 2){
@@ -75,9 +74,11 @@ void DisplayCurePatient(node *patientData){
             int h = 0;
             printf("Enter Search Name: ");
             scanf(" %[^\n]s", name); 
+            printf("\n");
             SearchTree(patientData, name, &h);
 
             if(h == 0) printf("%s Not Found.\n", name);
+            printf("\n");
         }
     }
     else if(a == 3) return;
