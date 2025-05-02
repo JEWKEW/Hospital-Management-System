@@ -99,9 +99,10 @@ void doctor_menu() {
     char username[MAX_LEN], password[MAX_LEN];
 
     while (1) {
-        printf("\n--- Doctor Menu ---\n");
-        printf("1. Login as Doctor\n");
-        printf("2. Back\n");
+        printf("\n---  Doctor Menu  ---\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~\n");
+        printf("[(1) Login as Doctor]\n");
+        printf("[(2) Back           ]\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
         getchar();  // consume newline
@@ -134,10 +135,11 @@ void patient_menu() {
     char username[MAX_LEN], password[MAX_LEN];
 
     while (1) {
-        printf("\n--- Patient Menu ---\n");
-        printf("1. Login as Patient\n");
-        printf("2. Create Patient Account\n");
-        printf("3. Back\n");
+        printf("\n-----   Patient Menu   -----\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+        printf("[(1) Login as Patient       ]\n");
+        printf("[(2) Create Patient Account ]\n");
+        printf("[(3) Back                   ]\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
         getchar();  // consume newline

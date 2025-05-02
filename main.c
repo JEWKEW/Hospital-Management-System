@@ -18,10 +18,10 @@ int main() {
     int main_choice;
 
     while (1) {
-        printf("\n=== Main Menu ===\n");
-        printf("1. Doctor\n");
-        printf("2. Patient\n");
-        printf("3. Exit\n");
+        printf("\n===  Main Menu  ===\n");
+        printf("[(1) Doctor       ]\n");
+        printf("[(2) Patient      ]\n");
+        printf("[(3) Exit         ]\n");
         printf("Enter choice: ");
         scanf("%d", &main_choice);
         getchar();  // consume newline
@@ -40,7 +40,7 @@ int main() {
                 printf("Invalid choice. Try again.\n");
         }
     }
-    
+
     Queue patientQueue;
     patientQueue.front = NULL;
     patientQueue.r = -1;
@@ -71,5 +71,3 @@ int main() {
 
     return 0;
 }
-
-//Atip Test
