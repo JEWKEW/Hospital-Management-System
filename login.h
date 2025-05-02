@@ -39,19 +39,29 @@ void register_patient() {
         fclose(fp);
     }
 
-    printf("Password: ");
-    fgets(password, MAX_LEN, stdin);
-    password[strcspn(password, "\n")] = '\0';
+    // Password input and validation
+    do {
+        printf("Password (at least 4 characters): ");
+        fgets(password, MAX_LEN, stdin);
+        password[strcspn(password, "\n")] = '\0';
 
-    printf("Confirm Password: ");
-    fgets(confirm_password, MAX_LEN, stdin);
-    confirm_password[strcspn(confirm_password, "\n")] = '\0';
+        if (strlen(password) < 4) {
+            printf("Password too short. Try again.\n");
+            continue;
+        }
 
-    if (strcmp(password, confirm_password) != 0) {
-        printf("Passwords do not match. Account not created.\n");
-        return;
-    }
+        printf("Confirm Password: ");
+        fgets(confirm_password, MAX_LEN, stdin);
+        confirm_password[strcspn(confirm_password, "\n")] = '\0';
 
+        if (strcmp(password, confirm_password) != 0) {
+            printf("Passwords do not match. Try again.\n");
+        } else {
+            break;
+        }
+    } while (1);
+
+    // Save to file
     fp = fopen(CSV_FILE, "a");
     if (fp == NULL) {
         printf("Error opening file.\n");
