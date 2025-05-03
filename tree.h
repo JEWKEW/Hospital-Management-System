@@ -20,13 +20,17 @@ struct node* createnode(Patient *patient) {
     newnode->patient->age = patient->age;
     strcpy(newnode->patient->sex, patient->sex);
     newnode->patient->pior = patient->pior;
-    newnode->patient->next = NULL;
+    strcpy(newnode->patient->phone, patient->phone);
+    strcpy(newnode->patient->allergies, patient->allergies);
+    strcpy(newnode->patient->conditions, patient->conditions);
 
+    newnode->patient->next = NULL;
     newnode->left = NULL;
     newnode->right = NULL;
 
     return newnode;
 }
+
 
 struct node* insert(struct node* root, Patient *patient) {
     if (root == NULL) {
