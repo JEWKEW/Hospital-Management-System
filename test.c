@@ -95,10 +95,10 @@ int main() {
     node *patientData = NULL;
     int choice = 0;
 
-    Enqueue(&patientQueue.front, "Aomchai Dee", 35, "Male", 2, &patientQueue.r);
-    Enqueue(&patientQueue.front, "Bomsri Jai", 60, "Female", 1, &patientQueue.r);
-    Enqueue(&patientQueue.front, "Cichai Mee", 20, "Male", 3, &patientQueue.r);
-    Enqueue(&patientQueue.front, "Daree Suk", 45, "Female", 2, &patientQueue.r);
+    // Enqueue(&patientQueue.front, "Aomchai Dee", 35, "Male", 2, &patientQueue.r);
+    // Enqueue(&patientQueue.front, "Bomsri Jai", 60, "Female", 1, &patientQueue.r);
+    // Enqueue(&patientQueue.front, "Cichai Mee", 20, "Male", 3, &patientQueue.r);
+    // Enqueue(&patientQueue.front, "Daree Suk", 45, "Female", 2, &patientQueue.r);
 
     DoctorMenu(&choice);
 

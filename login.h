@@ -1,14 +1,10 @@
-#ifndef SYSTEM_H
-#define SYSTEM_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "patient.h"
+#define CSV_FILE "account.csv"
 #define MAX_LEN 100
-#define CSV_FILE "patients.csv"
 
-// Declarations
 void register_patient();
 int login_patient(const char *username, const char *password);
 int is_doctor(const char *username, const char *password);
@@ -96,12 +92,12 @@ int is_doctor(const char *username, const char *password) {
 
 void doctor_panel() {
     printf("Welcome to the Doctor Panel!\n");
-    // Extend functionality here
+    doctor();
 }
 
 void patient_panel(const char *username) {
     printf("Welcome, %s! You're in the Patient Panel.\n", username);
-    // Extend functionality here
+    patient();
 }
 
 void doctor_menu() {
@@ -181,5 +177,3 @@ void patient_menu() {
         }
     }
 }
-
-#endif  // SYSTEM_H
