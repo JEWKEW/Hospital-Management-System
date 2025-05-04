@@ -3,6 +3,7 @@
 #include <string.h>
 #include "piorqueue.h"
 #include "tree.h"
+#include "login.h"
 
 void MoveData(Queue *patientQueue, node **patientData) {
     if (patientQueue->front != NULL) {
@@ -13,6 +14,33 @@ void MoveData(Queue *patientQueue, node **patientData) {
 }
 
 int main() {
+
+    int main_choice;
+
+    while (1) {
+        printf("\n===  Main Menu  ===\n");
+        printf("[(1) Doctor       ]\n");
+        printf("[(2) Patient      ]\n");
+        printf("[(3) Exit         ]\n");
+        printf("Enter choice: ");
+        scanf("%d", &main_choice);
+        getchar();  // consume newline
+
+        switch (main_choice) {
+            case 1:
+                doctor_menu();
+                break;
+            case 2:
+                patient_menu();
+                break;
+            case 3:
+                printf("Goodbye!\n");
+                return 0;
+            default:
+                printf("Invalid choice. Try again.\n");
+        }
+    }
+
     Queue patientQueue;
     patientQueue.front = NULL;
     patientQueue.r = -1;
@@ -44,5 +72,3 @@ int main() {
 
     return 0;
 }
-
-//Atip Test
