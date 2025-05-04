@@ -4,7 +4,8 @@
 #include "vari.h"
 #include "tree.h"
 #include "piorqueue.h"
-#define FILENAME "patients.csv"
+#define FILENAME "File/patients.csv"
+#define CUREFILENAME "File/cure_patient.csv"
 
 void clearTerminal();
 void waitForEnter();
@@ -15,6 +16,8 @@ void DisplayCurePatient(node *patientData);
 void doctor();
 void loadFromCSV(Patient **front, int *r);
 void saveToCSV(Patient *front);
+void write(struct node* root, FILE *file);
+void saveCurePatient(struct node* root);
 
 void loadFromCSV(Patient **front, int *r)
 {
@@ -217,7 +220,35 @@ void doctor(){
     DoctorMenu(&patientQueue, &patientData);
 
     saveToCSV(patientQueue.front);
+    saveCurePatient(patientData);
 
     return;
 }
 
+void write(struct node* root, FILE *file) {
+    if (root != NULL) {
+        write(root->left, file);
+
+        fprintf(file, "%s,%d,%s,%s,%s,%s,%d\n", root->patient->fullname, root->patient->age, root->patient->sex,
+            root->patient->phone, root->patient->allergies, root->patient->conditions, root->patient->pior);
+
+        write(root->right, file);
+    }
+}
+
+void saveCurePatient(struct node* root)
+{
+    FILE *file = fopen(CUREFILENAME, "w");
+    if (!file)
+    {
+        printf("Error opening CSV file for writing.\n");
+        return;
+    }
+
+    fprintf(file, "fullname,age,sex,phone,allergies,conditions,pior\n");
+
+    node *ptr = root;
+    write(root, file);
+
+    fclose(file);
+}
