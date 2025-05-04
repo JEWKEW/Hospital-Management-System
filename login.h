@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "patient.h"
-#define CSV_FILE "account.csv"
+#define CSV_FILE "File/account.csv"
 #define MAX_LEN 100
 
 void register_patient();
