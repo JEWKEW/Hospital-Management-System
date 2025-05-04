@@ -3,12 +3,13 @@
 
 #define MAX 100
 
-typedef struct Patient{
+typedef struct Patient {
     char fullname[40];
     int age;
     char sex[10];
-    char allergies[40];
-    char phone[11];
+    char phone[15];               // New
+    char allergies[100];          // New
+    char conditions[100];         // New
     int pior;
     struct Patient *next;
 } Patient;
@@ -22,6 +23,6 @@ typedef struct node {
     struct Patient *patient;
     struct node *left;
     struct node *right;
-}node;
+} node;
 
 #endif
