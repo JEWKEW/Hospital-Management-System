@@ -17,6 +17,7 @@ int main() {
     patientQueue.front = NULL;
     patientQueue.r = -1;
     node *patientData = NULL;
+    
 
     Enqueue(&patientQueue.front, "Aomchai Dee", 35, "Male", 2, &patientQueue.r);
     Enqueue(&patientQueue.front, "Bomsri Jai", 60, "Female", 1, &patientQueue.r);
