@@ -22,9 +22,11 @@ int main() {
 
         switch (main_choice) {
             case 1:
+                clearTerminal();
                 doctor_menu();
                 break;
             case 2:
+                clearTerminal();
                 patient_menu();
                 break;
             case 3:
@@ -33,6 +35,8 @@ int main() {
             default:
                 printf("Invalid choice. Try again.\n");
         }
+
+        clearTerminal();
     }
 
     return 0;

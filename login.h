@@ -87,7 +87,7 @@ int login_patient(const char *username, const char *password) {
 }
 
 int is_doctor(const char *username, const char *password) {
-    return strcmp(username, "doctor") == 0 && strcmp(password, "doctor123") == 0;
+    return strcmp(username, "d") == 0 && strcmp(password, "1234") == 0;
 }
 
 void doctor_panel() {
@@ -102,7 +102,7 @@ void patient_panel(const char *username) {
 
 void doctor_menu() {
     int choice;
-    char username[MAX_LEN], password[MAX_LEN];
+    char username[MAX_LEN], password[MAX_LEN], input[10];
 
     while (1) {
         printf("\n---  Doctor Menu  ---\n");
@@ -110,8 +110,8 @@ void doctor_menu() {
         printf("[(1) Login as Doctor]\n");
         printf("[(2) Back           ]\n");
         printf("Enter choice: ");
-        scanf("%d", &choice);
-        getchar();  // consume newline
+        fgets(input, 10, stdin);
+        sscanf(input, "%d", &choice);  
 
         if (choice == 1) {
             printf("Doctor Username: ");
@@ -124,21 +124,24 @@ void doctor_menu() {
 
             if (is_doctor(username, password)) {
                 printf("Doctor login successful.\n");
+                confirm();
                 doctor_panel();
             } else {
                 printf("Invalid doctor credentials.\n");
+                confirm();
             }
         } else if (choice == 2) {
             return;
         } else {
             printf("Invalid choice.\n");
+            confirm();
         }
     }
 }
 
 void patient_menu() {
     int choice;
-    char username[MAX_LEN], password[MAX_LEN];
+    char username[MAX_LEN], password[MAX_LEN], input[10];
 
     while (1) {
         printf("\n-----   Patient Menu   -----\n");
@@ -147,8 +150,8 @@ void patient_menu() {
         printf("[(2) Create Patient Account ]\n");
         printf("[(3) Back                   ]\n");
         printf("Enter choice: ");
-        scanf("%d", &choice);
-        getchar();  // consume newline
+        fgets(input, 10, stdin);
+        sscanf(input, "%d", &choice);  
 
         switch (choice) {
             case 1:
@@ -162,18 +165,22 @@ void patient_menu() {
 
                 if (login_patient(username, password)) {
                     printf("Patient login successful.\n");
+                    confirm();
                     patient_panel(username);
                 } else {
                     printf("Invalid patient credentials.\n");
+                    confirm();
                 }
                 break;
             case 2:
                 register_patient();
+                confirm();
                 break;
             case 3:
                 return;
             default:
                 printf("Invalid choice.\n");
+                confirm();
         }
     }
 }

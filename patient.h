@@ -35,21 +35,26 @@ void PatientMenu(Queue *q){
         if (sscanf(input, "%d", &choice) != 1 || choice < 1 || choice > 4)
         {
             printf("'%s' is not a valid option. Please choose again.\n", input);
+            confirm();
+            continue;
         }
 
         switch (choice) {
             case 1:
                 AddQueue(q);
+                confirm();
                 break;
             case 2:
                 SearchQ(q);
+                confirm();
                 break;
             case 3:
                 CancelQ(q);
+                confirm();
                 break;
             case 4:
-                printf("Exiting and saving data...\n");
                 saveToCSV(q->front);
+                clearTerminal();
                 return;
         }        
     }
@@ -71,7 +76,7 @@ void patient(){
 }
 
 void AddQueue(Queue *q){
-    char fullname[40], sex[10], phone[15], allergies[100], conditions[100];
+    char fullname[40], sex[10], phone[15], allergies[100], conditions[100], input[10];
     int age;
 
     // Step 1: Gather personal info
@@ -80,8 +85,8 @@ void AddQueue(Queue *q){
     fullname[strcspn(fullname, "\n")] = '\0';
 
     printf("Enter age: ");
-    scanf("%d", &age);
-    getchar();
+    fgets(input, 10, stdin);
+    sscanf(input, "%d", &age);
 
     printf("Enter sex: ");
     fgets(sex, sizeof(sex), stdin);
@@ -106,23 +111,17 @@ void AddQueue(Queue *q){
     fgets(conditions, sizeof(conditions), stdin);
     conditions[strcspn(conditions, "\n")] = '\0';
 
-    // Step 2: Calculate priority score
     int pior = calculatePriority();
 
-    // Step 3: Enqueue
     Enqueue(&q->front, fullname, age, sex, phone, allergies, conditions, pior, &q->r);
     saveToCSV(q->front);
     printf("Patient added and saved.\n");
-
-    waitForEnter();
 
     return;
 }
 
 void SearchQ(Queue *q){
     Search((*q).front);
-
-    waitForEnter();
 
     return;
 }
@@ -149,8 +148,6 @@ void CancelQ(Queue *q){
                 printf("Warning: Entered name does not match any patient in the queue.\n");
             }
         }
-
-    waitForEnter();
 
     return;
 }

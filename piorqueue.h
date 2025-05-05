@@ -96,10 +96,12 @@ void DisplayList(Patient *front) {
 
     Patient *ptr = front;
     int n = 1;
+    printf("\nHere are all Patients in the queue:\n");
     while (ptr != NULL) {
         printf("%d. Fullname: %s, Age: %d, Priority: %d\n",n++, ptr->fullname, ptr->age, ptr->pior);
         ptr = ptr->next;
     }
+    printf("\n");
 }
 
 void Search(Patient *front) {
@@ -110,7 +112,8 @@ void Search(Patient *front) {
 
     printf("What is your name: ");
     char name[40];
-    scanf(" %[^\n]", name); // Note: Added space before %[^\n] to consume leftover newline
+    fgets(name, 40, stdin);
+    name[strcspn(name, "\n")] = '\0';
 
     int n = 0;
     Patient *ptr = front;

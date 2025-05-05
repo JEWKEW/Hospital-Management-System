@@ -222,6 +222,8 @@ void doctor(){
     saveToCSV(patientQueue.front);
     saveCurePatient(patientData);
 
+    clearTerminal();
+
     return;
 }
 
