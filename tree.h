@@ -3,6 +3,11 @@
 #include <string.h>
 #include "vari.h"
 
+struct node* createnode(Patient *patient);
+struct node* insert(struct node* root, Patient *patient);
+void inorder(struct node* root, int* n);
+void SearchTree(struct node* root, char *name, int *h);
+
 struct node* createnode(Patient *patient) {
     struct node* newnode = (struct node*)malloc(sizeof(struct node));
     if (!newnode) {
@@ -30,7 +35,6 @@ struct node* createnode(Patient *patient) {
 
     return newnode;
 }
-
 
 struct node* insert(struct node* root, Patient *patient) {
     if (root == NULL) {

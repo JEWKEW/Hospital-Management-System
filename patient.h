@@ -3,7 +3,6 @@
 #include <string.h>
 #include "doctor.h"
 
-void waitForEnter();
 void PatientMenu(Queue *q);
 void AddQueue(Queue *q);
 void SearchQ(Queue *q);

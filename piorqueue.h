@@ -3,6 +3,15 @@
 #include <string.h>
 #include "vari.h"
 
+Patient *createQ(char *fullname, int age, char *sex, char *phone, char *allergies, char *conditions, int pior);
+int DeleteByName(Patient **front, const char *name, int *r);
+void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone, char *allergies, char *conditions, int pior, int *r);
+void Dequeue(Patient **front, int *r);
+void Peek(Patient *front);
+void DisplayList(Patient *front);
+void Search(Patient *front);
+int calculatePriority();
+
 Patient *createQ(char *fullname, int age, char *sex, char *phone, char *allergies, char *conditions, int pior) {
     Patient *newPatient = (Patient *)malloc(sizeof(Patient));
     strcpy(newPatient->fullname, fullname);
@@ -15,7 +24,6 @@ Patient *createQ(char *fullname, int age, char *sex, char *phone, char *allergie
     newPatient->next = NULL;
     return newPatient;
 }
-
 
 int DeleteByName(Patient **front, const char *name, int *r) {
     Patient *temp = *front, *prev = NULL;
@@ -40,8 +48,7 @@ int DeleteByName(Patient **front, const char *name, int *r) {
     return 1; // Deleted successfully
 }
 
-void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone,
-    char *allergies, char *conditions, int pior, int *r) {
+void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone, char *allergies, char *conditions, int pior, int *r) {
     if (*r == MAX - 1) {
         printf("Patient queue is full.\n");
         return;
@@ -66,7 +73,6 @@ void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone,
 
     (*r)++;
 }
-
 
 void Dequeue(Patient **front, int *r) {
     if (*front == NULL) {
