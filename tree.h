@@ -60,7 +60,7 @@ void SearchTree(struct node* root, char *name, int *h) {
     if (root != NULL) {
         int c = strcmp(root->patient->fullname, name);
         if(c == 0){
-            printf("%s %d\n", root->patient->fullname, root->patient->age);
+            printf("Patient Information:\nName: %s\nAge: %d\nSex: %s\nPhone number: %s\nAllergies: %s\nCondition: %s\n", root->patient->fullname, root->patient->age, root->patient->sex, root->patient->phone, root->patient->allergies,root->patient->conditions);
             *h = 1;
             return;
         }else if(c<0) SearchTree(root->right, name, h);

@@ -40,25 +40,26 @@ int DeleteByName(Patient **front, const char *name, int *r) {
     return 1; // Deleted successfully
 }
 
-void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone, char *allergies, char *conditions, int pior, int *r) {
+void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone,
+    char *allergies, char *conditions, int pior, int *r) {
     if (*r == MAX - 1) {
-        printf("Patient is full.\n");
+        printf("Patient queue is full.\n");
         return;
     }
 
     Patient *newQ = createQ(fullname, age, sex, phone, allergies, conditions, pior);
 
-    if (*front == NULL || (*front)->pior < pior || 
-        ((*front)->pior == pior && strcmp((*front)->fullname, fullname) > 0)) {
+
+    if (*front == NULL || (*front)->pior < pior) {
         newQ->next = *front;
         *front = newQ;
     } else {
         Patient *ptr = *front;
-        while (ptr->next != NULL && 
-               (ptr->next->pior > pior || 
-               (ptr->next->pior == pior && strcmp(ptr->next->fullname, fullname) < 0))) {
-            ptr = ptr->next;
+
+        while (ptr->next != NULL && ptr->next->pior >= pior) {
+        ptr = ptr->next;
         }
+
         newQ->next = ptr->next;
         ptr->next = newQ;
     }
@@ -74,7 +75,7 @@ void Dequeue(Patient **front, int *r) {
     }
 
     Patient *temp = *front;
-    printf("Dequeued: Fullname: %s, Priority: %d\n", temp->fullname, temp->pior);
+    printf("Cure Patient: Fullname: %s, Priority: %d\n", temp->fullname, temp->pior);
     *front = (*front)->next;
     free(temp);
     (*r)--;

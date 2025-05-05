@@ -156,56 +156,61 @@ void DisplayCurePatient(node *patientData){
     int choice;
     char input[10];
 
-    printf("\n");
-    printf("1.All Cured Patient\n");
-    printf("2.Search\n");
-    printf("3.Back\n");
-    printf("Enter choice number: ");
-    fgets(input, sizeof(input), stdin);
-    printf("\n");
-
-    input[strcspn(input, "\n")] = '\0';
-
-    if (strlen(input) == 0)
+    while (1)
     {
-        printf("Please enter a valid option.\n");
+        printf("\n");
+        printf("1.All Cured Patient\n");
+        printf("2.Search\n");
+        printf("3.Back\n");
+        printf("Enter choice number: ");
+        fgets(input, sizeof(input), stdin);
+        printf("\n");
 
-    }
+        input[strcspn(input, "\n")] = '\0';
 
-    if (sscanf(input, "%d", &choice) != 1 || choice < 1 || choice > 4)
-    {
-        printf("'%s' is not a valid option. Please choose again.\n", input);
-    }
-
-    if(choice == 1) {
-        if(patientData == NULL) printf("No Cured Patient\n");
-        else {
-            printf("%-3s %-20s %-5s %-10s\n", "", "NAME", "AGE", "SEX");
-            int n = 1;
-            inorder(patientData, &n);
-            printf("\n");
+        if (strlen(input) == 0)
+        {
+            printf("Please enter a valid option.\n");
+            confirm();
+            continue;
         }
-    }
-    else if(choice == 2){
-        if(patientData == NULL) printf("No Cured Patient\n");
-        else{
-            char name[40];
-            int h = 0;
-            printf("Enter Search Name: ");
-            fgets(name, sizeof(name), stdin);
-            printf("\n");
-            name[strcspn(name, "\n")] = '\0';
-            printf("\n");
-            SearchTree(patientData, name, &h);
 
-            if(h == 0) printf("%s Not Found.\n", name);
-            printf("\n");
+        if (sscanf(input, "%d", &choice) != 1 || choice < 1 || choice > 4)
+        {
+            printf("'%s' is not a valid option. Please choose again.\n", input);
+            confirm();
+            continue;
         }
-    }
-    else if(choice == 3) return;
-    else DisplayCurePatient(patientData);
 
-    confirm();
+        if(choice == 1) {
+            if(patientData == NULL) printf("No Cured Patient\n");
+            else {
+                printf("%-3s %-20s %-5s %-10s\n", "", "NAME", "AGE", "SEX");
+                int n = 1;
+                inorder(patientData, &n);
+                printf("\n");
+            }
+        }
+        else if(choice == 2){
+            if(patientData == NULL) printf("No Cured Patient\n");
+            else{
+                char name[40];
+                int h = 0;
+                printf("Enter Search Name: ");
+                fgets(name, sizeof(name), stdin);
+                name[strcspn(name, "\n")] = '\0';
+                printf("\n");
+                SearchTree(patientData, name, &h);
+    
+                if(h == 0) printf("%s Not Found.\n", name);
+                printf("\n");
+            }
+        }
+        else if(choice == 3) {clearTerminal(); return;}
+
+        confirm();
+    }
+
     return;
 }
 
