@@ -77,8 +77,12 @@ void clearTerminal() {
 }
 
 void waitForEnter() {
+    int c;
     printf("Press Enter to continue: ");
-    getchar();
+
+    if (getchar() != '\n') {
+        while ((c = getchar()) != '\n' && c != EOF);
+    }
 }
 
 void confirm(){
