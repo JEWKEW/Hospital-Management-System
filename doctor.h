@@ -29,7 +29,7 @@ void loadFromCSV(Patient **front, int *r)
     }
 
     char line[512];
-    fgets(line, sizeof(line), file); // Skip header
+    fgets(line, sizeof(line), file); 
 
     while (fgets(line, sizeof(line), file))
     {

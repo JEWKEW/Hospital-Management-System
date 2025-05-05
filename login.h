@@ -20,7 +20,6 @@ void register_patient() {
     fgets(username, MAX_LEN, stdin);
     username[strcspn(username, "\n")] = '\0';
 
-    // Check if username already exists
     FILE *fp = fopen(CSV_FILE, "r");
     char line[MAX_LEN], existing_user[MAX_LEN];
     if (fp) {
@@ -35,7 +34,6 @@ void register_patient() {
         fclose(fp);
     }
 
-    // Password input and validation
     do {
         printf("Password (at least 4 characters): ");
         fgets(password, MAX_LEN, stdin);
@@ -57,7 +55,6 @@ void register_patient() {
         }
     } while (1);
 
-    // Save to file
     fp = fopen(CSV_FILE, "a");
     if (fp == NULL) {
         printf("Error opening file.\n");

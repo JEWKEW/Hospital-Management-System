@@ -34,18 +34,18 @@ int DeleteByName(Patient **front, const char *name, int *r) {
     }
 
     if (temp == NULL) {
-        return 0; // Not found
+        return 0; 
     }
 
     if (prev == NULL) {
-        *front = temp->next; // First node
+        *front = temp->next; 
     } else {
         prev->next = temp->next;
     }
 
     free(temp);
     (*r)--;
-    return 1; // Deleted successfully
+    return 1; 
 }
 
 void Enqueue(Patient **front, char *fullname, int age, char *sex, char *phone, char *allergies, char *conditions, int pior, int *r) {

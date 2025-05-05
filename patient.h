@@ -78,7 +78,6 @@ void AddQueue(Queue *q){
     char fullname[40], sex[10], phone[15], allergies[100], conditions[100], input[10];
     int age;
 
-    // Step 1: Gather personal info
     printf("Enter fullname: ");
     fgets(fullname, sizeof(fullname), stdin);
     fullname[strcspn(fullname, "\n")] = '\0';
