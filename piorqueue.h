@@ -98,8 +98,10 @@ void DisplayList(Patient *front) {
     Patient *ptr = front;
     int n = 1;
     printf("\nHere are all Patients in the queue:\n");
+    printf("%-3s %-20s %-5s %-10s %-10s %-15s %-20s %-20s\n","No", "NAME", "AGE", "SEX", "PRIORITY", "PHONE", "ALLERGIES", "CONDITIONS");
+ 
     while (ptr != NULL) {
-        printf("%d. Fullname: %s, Age: %d, Priority: %d\n",n++, ptr->fullname, ptr->age, ptr->pior);
+        printf("%-3d %-20s %-5d %-10s %-10d %-15s %-20s %-20s\n", n++, ptr->fullname, ptr->age, ptr->sex, ptr->pior, ptr->phone, ptr->allergies, ptr->conditions);
         ptr = ptr->next;
     }
     printf("\n");
