@@ -30,10 +30,10 @@ int main() {
                 patient_menu();
                 break;
             case 3:
-                printf("Goodbye!\n");
+                printf("see you again next time\n");
                 return 0;
             default:
-                printf("Invalid choice. Try again.\n");
+                printf("Invalid choice please try again.\n");
         }
 
         clearTerminal();

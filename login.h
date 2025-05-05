@@ -26,7 +26,7 @@ void register_patient() {
         while (fgets(line, sizeof(line), fp)) {
             sscanf(line, "%[^,],%*s", existing_user);
             if (strcmp(existing_user, username) == 0) {
-                printf("Username already exists. Try a different one.\n");
+                printf("Username already exists please try a different one.\n");
                 fclose(fp);
                 return;
             }
@@ -88,12 +88,12 @@ int is_doctor(const char *username, const char *password) {
 }
 
 void doctor_panel() {
-    printf("Welcome to the Doctor Panel!\n");
+    printf("Doctor Panel!\n");
     doctor();
 }
 
 void patient_panel(const char *username) {
-    printf("Welcome, %s! You're in the Patient Panel.\n", username);
+    printf("%s You in Patient Panel.\n", username);
     patient();
 }
 
