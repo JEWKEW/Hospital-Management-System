@@ -88,12 +88,12 @@ int is_doctor(const char *username, const char *password) {
 }
 
 void doctor_panel() {
-    printf("Doctor Panel!\n");
+    printf("Hi, Doctor. What can I do for you?\n");
     doctor();
 }
 
 void patient_panel(const char *username) {
-    printf("%s You in Patient Panel.\n", username);
+    printf("%s! You are in Patient Panel.\n", username);
     patient();
 }
 
@@ -102,10 +102,9 @@ void doctor_menu() {
     char username[MAX_LEN], password[MAX_LEN], input[10];
 
     while (1) {
-        printf("\n---  Doctor Menu  ---\n");
-        printf("~~~~~~~~~~~~~~~~~~~~~\n");
-        printf("[(1) Login as Doctor]\n");
-        printf("[(2) Back           ]\n");
+        printf("\n-----  Doctor Menu  -----\n");
+        printf("1. Login as Doctor\n");
+        printf("2. Back\n");
         printf("Enter choice: ");
         fgets(input, 10, stdin);
         sscanf(input, "%d", &choice);  
@@ -142,10 +141,9 @@ void patient_menu() {
 
     while (1) {
         printf("\n-----   Patient Menu   -----\n");
-        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-        printf("[(1) Login as Patient       ]\n");
-        printf("[(2) Create Patient Account ]\n");
-        printf("[(3) Back                   ]\n");
+        printf("1. Login as Patient\n");
+        printf("2. Create Patient Account\n");
+        printf("3. Back\n");
         printf("Enter choice: ");
         fgets(input, 10, stdin);
         sscanf(input, "%d", &choice);  

@@ -105,7 +105,6 @@ void DoctorMenu(Queue *patientQueue, node **patientData){
     char input[10];
 
     while(1){
-        printf("Hi, Doctor. What can I do for you?\n");
         printf("1. Display all Queue\n");
         printf("2. Cure Patient\n");
         printf("3. Display Cured Patients\n");

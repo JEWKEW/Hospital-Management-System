@@ -4,10 +4,10 @@
 #include "login.h"
 
 void MainMenu(int *main_choice){
-    printf("\n===  Main Menu  ===\n");
-    printf("[(1) Doctor       ]\n");
-    printf("[(2) Patient      ]\n");
-    printf("[(3) Exit         ]\n");
+    printf("\n----- Main Menu  -----\n");
+    printf("1. Doctor\n");
+    printf("2. Patient\n");
+    printf("3. Exit\n");
     printf("Enter choice: ");
     scanf("%d", main_choice);
     getchar();
