@@ -1,7 +1,10 @@
 # Hospital-Management-Sysytem
 
 ## Project Description
- Data Structure Project by 3410, 3446, 3493
+This project is designed to simplify hospital management using data structures.
+It utilizes Binary Search Tree for fast searching, Singly Linked List for flexible patient records,
+Priority Queue to manage emergency levels, and Arrays for storing basic data.
+The goal is to make hospital operations more efficient, organized, and easy to use.
 
 ## File Setup for This project
 1. 📑 main.c
@@ -191,7 +194,6 @@ Expected Output
 4. Back
 Enter choice number:
 ~~~
-/////////////////////////////////////////////////////////////////////////////////
 
 #### Press 3 to do Display Cured Patients Option
 Sample Input
