@@ -1,4 +1,4 @@
-# Hospital-Management-Sysytem
+# Hospital-Management-System
 
 ## Project Description
 This project is designed to simplify hospital management using data structures.
