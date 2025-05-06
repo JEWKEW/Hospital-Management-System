@@ -808,7 +808,7 @@ Expected Output
 Enter choice: 
 ~~~
 
-### Press 3 to Exit
+#### Press 3 to Exit
 Sample Input
 ~~~
 ----- Main Menu -----
@@ -822,8 +822,6 @@ Expected Output
 ~~~
 see you again next time
 ~~~
-
-
 
 #### Error of Main Menu (When you write other than the option example : input x)
 Sample Input
