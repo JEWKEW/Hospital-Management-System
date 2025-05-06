@@ -204,7 +204,7 @@ Press Enter to continue:
 //////////////////////////////////////////////
 
 Press Enter to continue
-Simple Input
+Sample Input
     NAME                 AGE   SEX       
 1   Bob                  19    Male      
 
@@ -219,7 +219,7 @@ Enter choice number:
 /////////////////////////////////////////
 
 press 2 to Search for Patient that you have cured
-Simple Input
+Sample Input
 1.All Cured Patient
 2.Search
 3.Back
@@ -231,7 +231,7 @@ Enter Search Name:
 /////////////////////////////////////////////////////////
 
 Write a name of patient that have been cured example: Bob
-Simple Input
+Sample Input
 Enter Search Name: Bob
 
 Expected Output
@@ -248,7 +248,7 @@ Press Enter to continue:
 ///////////////////////////////////////////////////////////////////
 
 Press Enter to continue
-Simple Input
+Sample Input
 Patient Information:
 Name: Bob
 Age: 19
@@ -268,7 +268,7 @@ Enter choice number:
 //////////////////////////////////////////////////
 
 Press 3 to go Back
-Simple Input
+Sample Input
 1.All Cured Patient
 2.Search
 3.Back
@@ -285,7 +285,7 @@ Enter choice number:
 //////////////////////////////////////////////////////////////////////
 
 Press 4 to go back
-Simple Input
+Sample Input
 Hi, Doctor. What can I do for you?
 1. Display all Queue
 2. Cure Patient
@@ -303,7 +303,7 @@ Enter choice:
 /////////////////////////////////////////////////////////////////////////////////
 
 Press 2 to go to Patient
-Simple Input
+Sample Input
 ===  Main Menu  ===
 [(1) Doctor       ]
 [(2) Patient      ]
@@ -321,7 +321,7 @@ Enter choice:
 ////////////////////////////////////////////////////////////////////
 
 press 2 to create patient account
-Simple Input
+Sample Input
 -----   Patient Menu   -----
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [(1) Login as Patient       ]
@@ -335,7 +335,7 @@ Name:
 /////////////////////////////////////////////////
 
 Write your name as a patient example : Ben
-Simple Input 
+Sample Input 
 Name: Ben
 
 Expected Output
@@ -344,7 +344,7 @@ Password (at least 4 characters):
 ////////////////////////////////////////////
 
 write your own password example: 1234
-Simple Input
+Sample Input
 Password (at least 4 characters): 1234
 
 Expected Output
@@ -352,7 +352,363 @@ Confirm Password:
 
 ////////////////////////////////////////
 
-Simple Input
+Sample Input
 Confirm Password: 1234
 
 Expected Output
+Patient account created successfully.
+Press Enter to continue: 
+
+////////////////////////////////////////////////////
+
+Press Enter to continue
+Sample Input
+Patient account created successfully.
+Press Enter to continue: 
+
+Expected Output
+-----   Patient Menu   -----
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[(1) Login as Patient       ]
+[(2) Create Patient Account ]
+[(3) Back                   ]
+Enter choice: 
+
+///////////////////////////////////////////////////////
+
+Press 1 to Login as Patient
+Sample Input
+-----   Patient Menu   -----
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[(1) Login as Patient       ]
+[(2) Create Patient Account ]
+[(3) Back                   ]
+Enter choice: 1
+
+Expected Output
+Input Name: 
+
+////////////////////////////////////////////////
+
+Sample Input
+Input Name: Ben
+
+Expected Output
+Input Password: 
+
+/////////////////////////////////////////
+
+Sample Input
+Input Password: 1234
+
+Expected Output
+Patient login successful.
+Press Enter to continue: 
+
+//////////////////////////////////////////////
+
+Press Enter to continue the program
+Sample Input
+Patient login successful.
+Press Enter to continue: 
+
+Expected Output
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 
+
+//////////////////////////////////////////////////////
+
+Press 1 to Add Queue
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 1
+
+Expected Output
+Enter fullname: 
+
+//////////////////////////////////////////////
+
+Sample Input
+Enter fullname: Ben
+
+Expected Output
+Enter age:
+
+///////////////////////////
+
+Sample Input
+Enter age: 20
+
+Expected Out
+Enter sex:
+////////////////////////////////////
+
+Sample Input
+Enter sex: Male
+
+Expected Output
+Enter phone number:
+
+///////////////////////////////////
+
+Sample Input
+Enter phone number: 1234567890
+
+Expected Output
+Enter allergies (or 'none'):
+
+/////////////////////////////////////////////
+
+Sample Input
+Enter allergies (or 'none'): none
+
+Expected Output
+Enter underlying conditions (or 'none'): 
+
+///////////////////////////////////////////////////
+
+Sample Input
+Enter underlying conditions (or 'none'): none
+
+Expected Output
+Now, please answer a few health questions to assess priority:
+
+How would you rate your pain right now?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5):
+
+//////////////////////////////////////////////////////
+
+rating your pain example: 3
+Sample Input
+How would you rate your pain right now?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5): 3
+
+Expected Output
+How would you rate your fatigue level?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5):
+
+///////////////////////////////////////////////////////
+
+rating your fatigue level example: 2
+Sample Input
+How would you rate your fatigue level?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5): 2
+
+Expected Output
+Do you feel chest tightness or difficulty breathing?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5):
+
+/////////////////////////////////////////////////////////////////
+
+rating your chest tightness or difficulty breathing example : 4
+Sample Input
+Do you feel chest tightness or difficulty breathing?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5): 4
+
+Expected Output
+What is your level of consciousness?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5):
+
+/////////////////////////////////////////////////////////////
+
+rating your level of consciousness example: 1
+Sample Input
+What is your level of consciousness?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5): 1
+
+Expected Output
+Status: URGENT
+Patient added and saved.
+Press Enter to continue:
+
+////////////////////////////////////////////////////////////
+
+Press Enter to continue
+Sample Input
+Status: URGENT
+Patient added and saved.
+Press Enter to continue:
+
+Expected Output
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 
+
+///////////////////////////////////////////////////
+
+Press 2 to check your queue
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 2
+
+Expected Output
+What is your name: 
+
+////////////////////////////////////////////
+
+Example if your name is Ben
+Sample Input
+What is your name: Ben
+
+Expected Output
+Next is your queue
+Press Enter to continue: 
+
+///////////////////////////////////////////////
+
+Sample Input
+Next is your queue
+Press Enter to continue: 
+
+Expected Output
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 
+
+/////////////////////////////////////////////////////////
+
+Press 3 to Cancel Queue
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 3
+
+Expected Output
+Enter name to delete from queue: 
+
+//////////////////////////////////////////////////////
+
+Example if your name is Ben
+Sample Input
+Enter name to delete from queue: Ben
+
+Expected Output
+Patient 'Ben' removed from queue.
+Press Enter to continue: 
+
+//////////////////////////////////////////////////////
+
+Press enter to continue
+Sample Input
+Patient 'Ben' removed from queue.
+Press Enter to continue: 
+
+Expected Output
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 
+
+////////////////////////////////////////////////////
+
+Press 4 to exit from Patient Queue System
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 4
+
+Expected Output
+-----   Patient Menu   -----
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[(1) Login as Patient       ]
+[(2) Create Patient Account ]
+[(3) Back                   ]
+Enter choice: 
+
+///////////////////////////////////////////////////////////////
+
+press 3 to go back
+Sample Input
+-----   Patient Menu   -----
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[(1) Login as Patient       ]
+[(2) Create Patient Account ]
+[(3) Back                   ]
+Enter choice: 3
+
+
+Expected Output
+===  Main Menu  ===
+[(1) Doctor       ]
+[(2) Patient      ]
+[(3) Exit         ]
+Enter choice: 
+
+////////////////////////////
+
+Press 3 to Exit
+Sample Input
+===  Main Menu  ===
+[(1) Doctor       ]
+[(2) Patient      ]
+[(3) Exit         ]
+Enter choice: 3
+
+Expected Output
+see you again next time
