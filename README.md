@@ -13,7 +13,8 @@
 7. 📁 Empty folder name "File"
 8. 💽 C complier (Ex. MinGW)
 
-** Make sure you can complie c files in your device. **
+> [!Warning]
+> **Make sure you can complie c files in your device.**
 
 ## How to run?
 To start the project, Choose the main.c file and press run button.
