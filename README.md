@@ -821,3 +821,204 @@ Expected Output
 ~~~
 see you again next time
 ~~~
+
+
+
+#### Error of Main Menu (When you write other than the option example : input x)
+Sample Input
+----- Main Menu -----
+1. Doctor
+2. Patient
+3. Exit
+Enter choice: x
+
+Expected Output
+----- Main Menu -----
+1. Doctor
+2. Patient
+3. Exit
+Enter choice: 
+
+#### Error of Doctor Menu (When you write other than the option example : input x)
+Sample Input
+-----  Doctor Menu  -----
+1. Login as Doctor
+2. Back
+Enter choice: x
+
+Expected Output
+Invalid choice.
+Press Enter to continue: 
+
+#### Error of Doctor Menu (When you write wrong password example username: Ben, password: 4321)
+Sample Input
+-----  Doctor Menu  -----
+1. Login as Doctor
+2. Back
+Enter choice: 1
+Doctor Username: Ben
+Doctor Password: 4321
+
+Expected Output
+Invalid doctor credentials.
+Press Enter to continue: 
+
+#### Error of Doctor System (When you write other than the option example : input x)
+Sample Input
+Hi, Doctor. What can I do for you?
+
+----- Doctor System -----
+1. Display all Queue
+2. Cure Patient
+3. Display Cured Patients
+4. Back
+Enter choice number: x
+
+Expected Output
+'x' is not a valid option. Please choose again.
+Invalid choice. Please select a valid option.
+
+Press Enter to continue: 
+
+#### Error of option 3 Display Cured Patients (When you write other than the option example : input x)
+Sample Input
+1.All Cured Patient
+2.Search
+3.Back
+Enter choice number: x
+
+Expected Output
+'x' is not a valid option. Please choose again.
+Press Enter to continue: 
+
+#### Error of option 2 Search (when you write other than the option example : input x)
+Sample Input
+Enter Search Name: x
+
+Expected Output
+x Not Found.
+
+Press Enter to continue:
+
+#### Error of Patient Menu (when you write password less than 4 characters)
+Sample Input
+-----   Patient Menu   -----
+1. Login as Patient
+2. Create Patient Account
+3. Back
+Enter choice: 2
+Name: x
+Password (at least 4 characters): x 
+
+Expected Output
+Password too short. Try again.
+Password (at least 4 characters): 
+
+####  Error of Patient Menu (when you write comfirm password not the same as password)
+Sample Input
+-----   Patient Menu   -----
+1. Login as Patient
+2. Create Patient Account
+3. Back
+Enter choice: 2
+Name: x
+Password (at least 4 characters): 1234
+Confirm Password: 12
+
+Expected Output
+Passwords do not match. Try again.
+Password (at least 4 characters): 
+
+#### Error of Patient Menu (when Input wrong name and password in first option: Login as Patient)
+Sample Input
+-----   Patient Menu   -----
+1. Login as Patient
+2. Create Patient Account
+3. Back
+Enter choice: 1
+Input Name: wrong
+Input Password: x
+
+Expected Output
+Invalid patient credentials.
+Press Enter to continue: 
+
+#### Error of Patient Queue System (when you write other than the option example : input x)
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: x
+
+Expected Output
+'x' is not a valid option. Please choose again.
+Press Enter to continue: 
+
+#### Error of Patient Queue System (When you type phone number less than 10 or more than 10 digits in first option Add Queue)
+Sample Input
+x! You are in Patient Panel.
+
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 1
+Enter fullname: x
+Enter age: 20
+Enter sex: Male
+Enter phone number: 1234
+
+Expected Output
+Invalid phone number. Enter exactly 10 digits: 
+
+#### Error of Priority Test in Patient Queue System (When you other than the option in Priority Test example: x)
+Sample Input
+Now, please answer a few health questions to assess priority:
+
+How would you rate your pain right now?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5): x
+
+Expected Output
+How would you rate your pain right now?
+1. No symptoms at all
+2. Mild
+3. Moderate
+4. Severe
+5. Worst imaginable
+Enter choice (1-5):
+
+#### Error of Patient Queue System (When you write name that doesn't have in the add queue)
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 2
+What is your name: wrong
+
+Expected Output
+Your name is not in the queue
+Press Enter to continue: 
+
+#### Error of Patient Queue System (When you write name that doesn't have in the cancel queue option)
+Sample Input
+----- Patient Queue System -----
+1. Add Queue
+2. Check Queue
+3. Cancel Queue
+4. Exit
+Choose an option: 3
+Enter name to delete from queue: wrong
+
+Expected Output
+Warning: Entered name does not match any patient in the queue.
+Press Enter to continue: 
