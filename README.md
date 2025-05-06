@@ -13,7 +13,8 @@
 7. 📁 Empty folder name "File"
 8. 💽 C complier (Ex. MinGW)
 
-** Make sure you can complie c files in your device. **
+> [!Warning]
+> **Make sure you can complie c files in your device.**
 
 ## How to run?
 To start the project, Choose the main.c file and press run button.
@@ -33,8 +34,8 @@ Enter choice: 1
 Expected Output
 ~~~
 -----  Doctor Menu  -----
-Login as Doctor
-Back
+1. Login as Doctor
+2. Back
 Enter choice:
 ~~~
 
@@ -42,8 +43,8 @@ Enter choice:
 Sample Input
 ~~~
 -----  Doctor Menu  -----
-Login as Doctor
-Back
+1. Login as Doctor
+2. Back
 Enter choice: 2
 ~~~
 
@@ -53,15 +54,15 @@ Expected Output
 1. Doctor
 2. Patient
 3. Exit
-Enter choice: 1
+Enter choice: 
 ~~~
 
 #### But if you press 1 In doctor Menu
 Sample Input
 ~~~
 -----  Doctor Menu  -----
-Login as Doctor
-Back
+1. Login as Doctor
+2. Back
 Enter choice: 1
 ~~~
 
@@ -200,7 +201,7 @@ Sample Input
 2. Cure Patient
 3. Display Cured Patients
 4. Back
-Enter choice number:
+Enter choice number: 3
 ~~~
 
 Expected Output
@@ -488,7 +489,7 @@ Jame! You are in Patient Panel.
 2. Check Queue
 3. Cancel Queue
 4. Exit
-Choose an option:
+Choose an option: 1
 ~~~
 
 Expected Output
@@ -807,7 +808,7 @@ Expected Output
 Enter choice: 
 ~~~
 
-Press 3 to Exit
+### Press 3 to Exit
 Sample Input
 ~~~
 ----- Main Menu -----
