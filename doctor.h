@@ -18,6 +18,7 @@ void loadFromCSV(Patient **front, int *r);
 void saveToCSV(Patient *front);
 void write(struct node* root, FILE *file);
 void saveCurePatient(struct node* root);
+void loadCurePatient(struct node** root);
 
 void loadFromCSV(Patient **front, int *r)
 {
@@ -225,6 +226,7 @@ void doctor(){
     node *patientData = NULL;
 
     loadFromCSV(&patientQueue.front, &patientQueue.r);
+    loadCurePatient(&patientData);
 
     DoctorMenu(&patientQueue, &patientData);
 
@@ -260,6 +262,33 @@ void saveCurePatient(struct node* root)
 
     node *ptr = root;
     write(root, file);
+
+    fclose(file);
+}
+
+void loadCurePatient(struct node** root){
+    FILE *file = fopen(CUREFILENAME, "r");
+    if (!file)
+    {
+        printf("Error opening CSV file for writing.\n");
+        return;
+    }
+
+    char line[512];
+    fgets(line, sizeof(line), file); 
+
+    while (fgets(line, sizeof(line), file))
+    {
+        Patient *p = malloc(sizeof(Patient));
+
+        if (sscanf(line, "%[^,],%d,%[^,],%[^,],%[^,],%[^,],%d",
+                   p->fullname, &p->age, p->sex, p->phone, p->allergies, p->conditions, &p->pior) == 7)
+        {
+            *root = insert(*root, p);
+        }
+    }
+
+    printf("Data Loaded.\n");
 
     fclose(file);
 }
