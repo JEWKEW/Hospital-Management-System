@@ -1,4 +1,4 @@
-# Hospital-Management-Sysytem
+# Hospital-Management-System
 
 ## Project Description
 This project is designed to simplify hospital management using data structures.
@@ -14,7 +14,9 @@ The goal is to make hospital operations more efficient, organized, and easy to u
 5. 📑 piorqueue.h
 6. 📑 tree.h
 7. 📁 Empty folder name "File"
-8. 💽 C complier (Ex. MinGW)
+8. 📁 "output" folder
+   - main.exe
+10. 💽 C complier (Ex. MinGW)
 
 > [!Warning]
 > **Make sure you can complie c files in your device.**
